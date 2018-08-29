@@ -1,0 +1,49 @@
+#!/bin/bash
+set -e -u
+cd "$(dirname "$0")"/..
+
+# Check environment
+
+fail() {
+    echo 1>&2 "$1"
+    echo 1>&2 "Usage: $(basename "$0") [SCRIPT]"
+    exit 255
+}
+
+if [ "$#" -lt 1 ]; then
+    fail "Invalid number of arguments."
+fi
+
+if [ ! -f "$1" ]; then
+    fail "Script \"$1\" does not exist."
+fi
+
+# Run generator
+
+FILE="$(realpath "$1")"
+FOLDER="$(realpath "$1" | sed "s@/src/@/generated/@" | sed "s@.php\$@@")"
+RETURN=""
+TRY=0
+
+rm -f -r "${FOLDER}"
+mkdir -p "${FOLDER}"
+
+echo "[RUN] ${FILE}"
+
+until [ "${TRY}" -ge 3 ]; do
+    echo -n "$(cd "${FOLDER}" && melody run "${FILE}")"
+
+    RETURN="$(ls "${FOLDER}")"
+    if [ -n "${RETURN}" ]; then
+        echo "[OK] ${FILE}"
+        break
+    fi
+
+    echo 1>&2 "[NOK] ${FILE}"
+    TRY="$((TRY + 1))"
+    sleep 5
+done
+
+if [ "${TRY}" -ge 3 ]; then
+    exit 255
+fi
