@@ -49,7 +49,7 @@ $fs = new Filesystem();
 $fs->dumpFile(
   'latest',
 <<<EOF
-JOPLIN_RELEASE="https://github.com/laurent22/joplin/releases/download/v${latestVersion}/Joplin-${latestVersion}-x86_64.AppImage"
+JOPLIN_LINUX_RELEASE="https://github.com/laurent22/joplin/releases/download/v${latestVersion}/Joplin-${latestVersion}-x86_64.AppImage"
 JOPLIN_SOURCE="https://github.com/laurent22/joplin/archive/v${latestVersion}.tar.gz"
 JOPLIN_VERSION="${latestVersion}"
 

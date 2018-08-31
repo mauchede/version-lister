@@ -17,14 +17,14 @@ Retrieved information can be used in your shell scripts:
 
 export $(xargs < generated/docker/docker-ce/latest)
 
-curl --location --output /tmp/docker.tgz "${DOCKER_CE_RELEASE}"
+curl --location --output /tmp/docker.tgz "${DOCKER_CE_LINUX_RELEASE}"
 tar --directory /tmp --extract --file /tmp/docker.tgz
 
 # Use remote usage
 
 export $(curl --location "https://github.com/timonier/version-lister/raw/generated/tianon/gosu/latest" | xargs)
 
-curl --location --output /tmp/docker.tgz "${DOCKER_CE_RELEASE}"
+curl --location --output /tmp/docker.tgz "${DOCKER_CE_LINUX_RELEASE}"
 tar --directory /tmp --extract --file /tmp/docker.tgz
 ```
 

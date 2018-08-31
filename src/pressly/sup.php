@@ -49,7 +49,8 @@ $fs = new Filesystem();
 $fs->dumpFile(
   'latest',
 <<<EOF
-SUP_RELEASE="https://github.com/pressly/sup/releases/download/v${latestVersion}/sup-linux64"
+SUP_DARWIN_RELEASE="https://github.com/pressly/sup/releases/download/v${latestVersion}/sup-darwin64"
+SUP_LINUX_RELEASE="https://github.com/pressly/sup/releases/download/v${latestVersion}/sup-linux64"
 SUP_SOURCE="https://github.com/pressly/sup/archive/v${latestVersion}.tar.gz"
 SUP_VERSION="${latestVersion}"
 

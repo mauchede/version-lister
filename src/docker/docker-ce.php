@@ -49,7 +49,7 @@ $fs = new Filesystem();
 $fs->dumpFile(
   'latest',
 <<<EOF
-DOCKER_CE_RELEASE="https://download.docker.com/linux/static/edge/x86_64/docker-${latestVersion}-ce.tgz"
+DOCKER_CE_LINUX_RELEASE="https://download.docker.com/linux/static/edge/x86_64/docker-${latestVersion}-ce.tgz"
 DOCKER_CE_SOURCE="https://github.com/docker/docker-ce/archive/v${latestVersion}-ce.tar.gz"
 DOCKER_CE_VERSION="${latestVersion}"
 
