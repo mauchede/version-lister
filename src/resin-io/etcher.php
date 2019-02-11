@@ -49,9 +49,9 @@ $fs = new Filesystem();
 $fs->dumpFile(
   'latest',
 <<<EOF
-ETCHER_LINUX_RELEASE="https://github.com/resin-io/etcher/releases/download/v${latestVersion}/etcher-electron-${latestVersion}-x86_64.AppImage"
-ETCHER_SOURCE="https://github.com/resin-io/etcher/archive/v${latestVersion}.tar.gz"
-ETCHER_VERSION="${latestVersion}"
+ETCHER_LINUX_RELEASE="https://github.com/resin-io/etcher/releases/download/v{$latestVersion}/etcher-electron-{$latestVersion}-x86_64.AppImage"
+ETCHER_SOURCE="https://github.com/resin-io/etcher/archive/v{$latestVersion}.tar.gz"
+ETCHER_VERSION="{$latestVersion}"
 
 EOF
 );

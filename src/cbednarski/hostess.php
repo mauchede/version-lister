@@ -49,10 +49,10 @@ $fs = new Filesystem();
 $fs->dumpFile(
   'latest',
 <<<EOF
-HOSTESS_DARWIN_RELEASE="https://github.com/cbednarski/hostess/releases/download/v${latestVersion}/hostess_darwin_amd64"
-HOSTESS_LINUX_RELEASE="https://github.com/cbednarski/hostess/releases/download/v${latestVersion}/hostess_linux_amd64"
-HOSTESS_SOURCE="https://github.com/cbednarski/hostess/archive/v${latestVersion}.tar.gz"
-HOSTESS_VERSION="${latestVersion}"
+HOSTESS_DARWIN_RELEASE="https://github.com/cbednarski/hostess/releases/download/v{$latestVersion}/hostess_darwin_amd64"
+HOSTESS_LINUX_RELEASE="https://github.com/cbednarski/hostess/releases/download/v{$latestVersion}/hostess_linux_amd64"
+HOSTESS_SOURCE="https://github.com/cbednarski/hostess/archive/v{$latestVersion}.tar.gz"
+HOSTESS_VERSION="{$latestVersion}"
 
 EOF
 );

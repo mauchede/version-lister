@@ -49,8 +49,8 @@ $fs = new Filesystem();
 $fs->dumpFile(
   'latest',
 <<<EOF
-GATLING_RELEASE="https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/${latestVersion}/gatling-charts-highcharts-bundle-${latestVersion}-bundle.zip"
-GATLING_VERSION="${latestVersion}"
+GATLING_RELEASE="https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/{$latestVersion}/gatling-charts-highcharts-bundle-{$latestVersion}-bundle.zip"
+GATLING_VERSION="{$latestVersion}"
 
 EOF
 );

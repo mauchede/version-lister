@@ -49,10 +49,10 @@ $fs = new Filesystem();
 $fs->dumpFile(
   'latest',
 <<<EOF
-SH_DARWIN_RELEASE="https://github.com/mvdan/sh/releases/download/v${latestVersion}/shfmt_v${latestVersion}_darwin_amd64"
-SH_LINUX_RELEASE="https://github.com/mvdan/sh/releases/download/v${latestVersion}/shfmt_v${latestVersion}_linux_amd64"
-SH_SOURCE="https://github.com/mvdan/sh/archive/v${latestVersion}.tar.gz"
-SH_VERSION="${latestVersion}"
+SH_DARWIN_RELEASE="https://github.com/mvdan/sh/releases/download/v{$latestVersion}/shfmt_v{$latestVersion}_darwin_amd64"
+SH_LINUX_RELEASE="https://github.com/mvdan/sh/releases/download/v{$latestVersion}/shfmt_v{$latestVersion}_linux_amd64"
+SH_SOURCE="https://github.com/mvdan/sh/archive/v{$latestVersion}.tar.gz"
+SH_VERSION="{$latestVersion}"
 
 EOF
 );

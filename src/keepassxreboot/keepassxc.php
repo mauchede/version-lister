@@ -49,9 +49,9 @@ $fs = new Filesystem();
 $fs->dumpFile(
   'latest',
 <<<EOF
-KEEPASSXC_LINUX_RELEASE="https://github.com/keepassxreboot/keepassxc/releases/download/${latestVersion}/KeePassXC-${latestVersion}-x86_64.AppImage"
-KEEPASSXC_SOURCE="https://github.com/keepassxreboot/keepassxc/archive/${latestVersion}.tar.gz"
-KEEPASSXC_VERSION="${latestVersion}"
+KEEPASSXC_LINUX_RELEASE="https://github.com/keepassxreboot/keepassxc/releases/download/{$latestVersion}/KeePassXC-{$latestVersion}-x86_64.AppImage"
+KEEPASSXC_SOURCE="https://github.com/keepassxreboot/keepassxc/archive/{$latestVersion}.tar.gz"
+KEEPASSXC_VERSION="{$latestVersion}"
 
 EOF
 );

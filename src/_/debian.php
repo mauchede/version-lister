@@ -45,8 +45,8 @@ $fs = new Filesystem();
 $fs->dumpFile(
   'latest',
 <<<EOF
-DEBIAN_RELEASE="http://cdimage.debian.org/debian-cd/${latestVersion}/amd64/iso-cd/debian-${latestVersion}-amd64-netinst.iso"
-DEBIAN_VERSION="${latestVersion}"
+DEBIAN_RELEASE="http://cdimage.debian.org/debian-cd/{$latestVersion}/amd64/iso-cd/debian-{$latestVersion}-amd64-netinst.iso"
+DEBIAN_VERSION="{$latestVersion}"
 
 EOF
 );

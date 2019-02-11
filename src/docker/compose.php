@@ -49,9 +49,9 @@ $fs = new Filesystem();
 $fs->dumpFile(
   'latest',
 <<<EOF
-COMPOSE_LINUX_RELEASE="https://github.com/docker/compose/releases/download/${latestVersion}/docker-compose-linux-x86_64"
-COMPOSE_SOURCE="https://github.com/docker/compose/archive/${latestVersion}.tar.gz"
-COMPOSE_VERSION="${latestVersion}"
+COMPOSE_LINUX_RELEASE="https://github.com/docker/compose/releases/download/{$latestVersion}/docker-compose-linux-x86_64"
+COMPOSE_SOURCE="https://github.com/docker/compose/archive/{$latestVersion}.tar.gz"
+COMPOSE_VERSION="{$latestVersion}"
 
 EOF
 );
