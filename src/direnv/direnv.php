@@ -23,7 +23,7 @@ $client = new Client(
 // Retrieve versions
 
 try {
-    $response = $client->get('https://api.github.com/repos/docker/docker-ce/git/refs/tags');
+    $response = $client->get('https://api.github.com/repos/direnv/direnv/git/refs/tags');
 } catch (\Exception $exception) {
     exit('Impossible to retrieve versions.');
 }
@@ -31,7 +31,7 @@ try {
 $versions = \array_filter(
     \array_map(
         function ($version) {
-            return \preg_replace('`refs/tags/v([0-9.]+)`', '$1', $version['ref']);
+            return \preg_replace('`refs/tags/(release-|v)?`', '', $version['ref']);
         },
         \json_decode($response->getBody()->getContents(), true)
     ),
@@ -43,15 +43,25 @@ $versions = \array_filter(
 
 // Generate files
 
-$latestVersion = \end($versions);
+$latestVersion = null;
+do {
+    $version = \array_pop($versions);
+
+    try {
+        $client->get("https://github.com/direnv/direnv/releases/download/v{$version}/direnv.linux-amd64");
+        $latestVersion = $version;
+    } catch (\Exception $exception) {
+    }
+} while (null === $latestVersion && !empty($versions));
 
 $fs = new Filesystem();
 $fs->dumpFile(
   'latest',
 <<<EOF
-DOCKER_CE_LINUX_RELEASE="https://download.docker.com/linux/static/stable/x86_64/docker-{$latestVersion}.tgz"
-DOCKER_CE_SOURCE="https://github.com/docker/docker-ce/archive/v{$latestVersion}.tar.gz"
-DOCKER_CE_VERSION="{$latestVersion}"
+DIRENV_DARWIN_RELEASE="https://github.com/direnv/direnv/releases/download/v{$latestVersion}/direnv.darwin-amd64"
+DIRENV_LINUX_RELEASE="https://github.com/direnv/direnv/releases/download/v{$latestVersion}/direnv.linux-amd64"
+DIRENV_SOURCE="https://github.com/direnv/direnv/archive/v{$latestVersion}.tar.gz"
+DIRENV_VERSION="{$latestVersion}"
 
 EOF
 );
