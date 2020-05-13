@@ -31,9 +31,9 @@ tar --directory /tmp --extract --file /tmp/docker.tgz
 ## Contributing
 
 1. Fork it.
-2. Create your branch: `git checkout -b my-new-feature`.
+2. Create your branch: `git checkout -b feature/my-new-feature`.
 3. Commit your changes: `git commit -am 'Add some feature'`.
-4. Push to the branch: `git push origin my-new-feature`.
+4. Push to the branch: `git push origin feature/my-new-feature`.
 5. Submit a [merge request](https://docs.gitlab.com/ee/user/project/merge_requests/).
 
 __Note__: [GitHub repository](https://github.com/mauchede/version-lister) is a mirror. [Merge request](https://docs.gitlab.com/ee/user/project/merge_requests/) has to be submitted on the [GitLab repository](https://gitlab.com/mauchede/version-lister).

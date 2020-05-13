@@ -23,10 +23,12 @@ deploy:versions:
         name: alpine:latest
     only:
         - master
+    retry:
+        max: 2
     script:
         - 'rm -f -r $(ls | grep -v generated)'
         - 'mv generated/* ./'
-        - 'rm -f -r .gitignore .gitlab-ci.yml .php_cs.dist generated'
+        - 'rm -f -r .gitignore .gitlab-ci.yaml .php_cs generated'
         - 'git checkout --orphan generated'
         - 'git add -A'
         - 'git commit -m "$(date --utc ''+%Y-%m-%d %H:%M'')"'
@@ -35,7 +37,11 @@ deploy:versions:
 
 retrieve:versions:
     before_script:
+        - 'curl --location --output /usr/bin/composer "https://getcomposer.org/composer-stable.phar"'
+        - 'chmod +x /usr/bin/composer'
         - 'composer config -g github-oauth.github.com "${GITHUB_TOKEN}"'
+        - 'curl --location --output /usr/local/bin/melody "http://get.sensiolabs.org/melody.phar"'
+        - 'chmod +x /usr/local/bin/melody'
     cache:
         <<: *default-cache
         policy: push
@@ -43,7 +49,9 @@ retrieve:versions:
         - generated
     image:
         entrypoint: ['']
-        name: timonier/php:cli
+        name: registry.gitlab.com/timonier/php:cli
+    retry:
+        max: 2
     script:
         - 'bin/retrieve-versions'
     stage: retrieve
