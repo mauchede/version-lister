@@ -1,0 +1,4 @@
+DIRENV_DARWIN_RELEASE="https://github.com/direnv/direnv/releases/download/v2.22.1/direnv.darwin-amd64"
+DIRENV_LINUX_RELEASE="https://github.com/direnv/direnv/releases/download/v2.22.1/direnv.linux-amd64"
+DIRENV_SOURCE="https://github.com/direnv/direnv/archive/v2.22.1.tar.gz"
+DIRENV_VERSION="2.22.1"

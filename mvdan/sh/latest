@@ -1,0 +1,4 @@
+SH_DARWIN_RELEASE="https://github.com/mvdan/sh/releases/download/v3.1.2/shfmt_v3.1.2_darwin_amd64"
+SH_LINUX_RELEASE="https://github.com/mvdan/sh/releases/download/v3.1.2/shfmt_v3.1.2_linux_amd64"
+SH_SOURCE="https://github.com/mvdan/sh/archive/v3.1.2.tar.gz"
+SH_VERSION="3.1.2"

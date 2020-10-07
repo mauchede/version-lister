@@ -1,0 +1,4 @@
+MKCERT_DARWIN_RELEASE="https://github.com/FiloSottile/mkcert/releases/download/v1.4.1/mkcert-v1.4.1-darwin-amd64"
+MKCERT_LINUX_RELEASE="https://github.com/FiloSottile/mkcert/releases/download/v1.4.1/mkcert-v1.4.1-linux-amd64"
+MKCERT_SOURCE="https://github.com/FiloSottile/mkcert/archive/v1.4.1.tar.gz"
+MKCERT_VERSION="1.4.1"

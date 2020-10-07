@@ -1,0 +1,4 @@
+HOSTESS_DARWIN_RELEASE="https://github.com/cbednarski/hostess/releases/download/v0.5.2/hostess_darwin_amd64"
+HOSTESS_LINUX_RELEASE="https://github.com/cbednarski/hostess/releases/download/v0.5.2/hostess_linux_amd64"
+HOSTESS_SOURCE="https://github.com/cbednarski/hostess/archive/v0.5.2.tar.gz"
+HOSTESS_VERSION="0.5.2"
